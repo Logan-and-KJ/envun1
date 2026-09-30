@@ -1,6 +1,6 @@
        let score = 0;
-        let energy = 100;
-        const totalToDestroy = 1500;
+        let energy = 150;
+        const totalToDestroy = 1000;
         // Trivia questions - environmental themed
 const questions = [
     { q: "Which gas contributes MOST to greenhouse effect?", a: ["Oxygen", "CO₂", "Nitrogen", "Helium"], correct: 1 },
