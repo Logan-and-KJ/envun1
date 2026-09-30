@@ -55,7 +55,7 @@ const questions = [
             if (selected === currentQuestion.correct) {
                 // Correct answer
                 btns[selected].classList.add('correct-answer');
-                energy = Math.min(energy + 25, 100);
+                energy = Math.min(energy + 25, 150);
                 document.getElementById('feedback').innerHTML = `
                     ✓ <strong>Correct!</strong> +25 Energy
                     <div class="show-answer">✅ Correct Answer: ${currentQuestion.a[currentQuestion.correct]}</div>
@@ -87,10 +87,10 @@ const questions = [
             document.getElementById('progress').textContent = Math.round(damagePct) + '%';
             
             document.getElementById('energy').textContent = energy;
-            document.getElementById('energyBar').style.width = energyPct + '%';
+            document.getElementById('energyBar').style.width = (energyPct/1.5) + '%';
             
             // Disable buttons if not enough energy
-            document.getElementById('btn-pollute').disabled = energy < 10;
+          //  document.getElementById('btn-pollute').disabled = energy < 10;
             document.getElementById('btn-deforest').disabled = energy < 25;
             document.getElementById('btn-overfish').disabled = energy < 50;
             document.getElementById('btn-oil').disabled = energy < 100;
@@ -103,7 +103,7 @@ const questions = [
         
         function resetGame() {
             score = 0;
-            energy = 100;
+            energy = 150;
             updateDisplay();
             loadQuestion();
         }
